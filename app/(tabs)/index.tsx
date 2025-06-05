@@ -9,6 +9,7 @@ import CircleButton from "@/app/components/CircleButton";
 import EmojiPicker from "../components/EmojiPicker";
 import EmojiList from "../components/EmojiList";
 import EmojiSticker from "../components/EmojiSticker";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 const PlaceholderImage = require('@/assets/images/background-image.png');
 
@@ -46,6 +47,7 @@ const onSaveImageAsync = async()=>{
 
 };
   return (
+  <GestureHandlerRootView style={styles.container}>
     <View style={styles.container}>
       <View style={styles.imageContainer}>
         <ImageViewer imgSource={PlaceholderImage} selectedImage={selectedImage}/>
@@ -70,6 +72,7 @@ const onSaveImageAsync = async()=>{
         <EmojiList onSelect={setPickEmoji} onCloseModal={onModalClose}/>
         </EmojiPicker>
     </View>
+    </GestureHandlerRootView>
   );
 }
 
